@@ -1,6 +1,6 @@
 ---
-title: Nick Strayer's Resume"
-author: Nick Strayer
+title: Kelsey Wickerham's Resume"
+author: Kelsey Wickerham
 date: "`r Sys.Date()`"
 output:
   pagedown::html_resume:
@@ -19,7 +19,7 @@ library(tidyverse)
 library(glue)
 
 # Set this to true to have links turned into footnotes at the end of the document
-PDF_EXPORT <- FALSE
+PDF_EXPORT <- TRUE
 
 # Holds all the links that were inserted for placement at the end
 links <- c()
@@ -34,8 +34,9 @@ position_data <- read_csv('positions.csv') %>%
   mutate(
     # Build some custom sections by collapsing others
     section = case_when(
-      section %in% c('research_positions', 'industry_positions') ~ 'positions', 
+      section %in% c('volunteer_positions', 'industry_positions') ~ 'positions', 
       section %in% c('data_science_writings', 'by_me_press') ~ 'writings',
+      section %in% c('certifications') ~ 'other',
       TRUE ~ section
     )
   ) 
@@ -47,18 +48,18 @@ Aside
 ================================================================================
 
 
-![logo](beta_dist.png){width=100%}
+![logo](C:/Users/klwic/OneDrive/Pictures/PAF-514-MOD-6-IMAGE.png){width=100%}
 
 Contact {#contact}
 --------------------------------------------------------------------------------
 
 
 
-- <i class="fa fa-envelope"></i> nick.strayer@gmail.com
-- <i class="fa fa-twitter"></i> NicholasStrayer
-- <i class="fa fa-github"></i> github.com/nstrayer
-- <i class="fa fa-link"></i> [nickstrayer.me](http://nickstrayer.me/)
-- <i class="fa fa-phone"></i> (734) 645-0110
+- <i class="fa fa-envelope"></i> kwickerh@asu.edu
+- <i class="fa fa-twitter"></i> kelseydoesnthaveit
+- <i class="fa fa-github"></i> github.com/kwickerh
+- <i class="fa fa-link"></i> [github.com/kwickerh/paf-514-cv-example](https://github.com/kwickerh/paf-514-cv-example)
+- <i class="fa fa-phone"></i> (210) 867-5309
 
 
 
@@ -69,13 +70,13 @@ Language Skills {#skills}
 ```{r}
 skills <- tribble(
   ~skill,               ~level,
-  "R",                  5,
-  "Javascript (d3.js)", 4.5,
-  "Python",             4,
-  "Bash",               3.5,
-  "SQL",                3,
-  "C++",                3,
-  "AWK",                3
+  "R",                  3,
+  "Javascript (d3.js)", 1,
+  "Python",             3,
+  "Bash",               1,
+  "SQL",                2,
+  "C++",                1,
+  "AWK",                1
 )
 build_skill_bars(skills)
 ```
@@ -85,12 +86,12 @@ build_skill_bars(skills)
 Open Source Contributions {#open-source}
 --------------------------------------------------------------------------------
 
-All projects available at `github.com/nstrayer/<name>`
+All projects available at `github.com/kwickerh/<name>`
 
 
-- `shinysense`: R package to use sensor data in Shiny apps
-- `tuftesque`: Hugo theme (behind LiveFreeOrDichotomize.com)
-- `slid3r`: D3 add-on for fully svg slider inputs
+- `montyhall`: R package to complete Monty Hall problem
+- `sd dorling`: Dashboard utilizing geographic data for San Diego.
+- `the tortured data analysts department`: Github website created for school.
 
 
 More info {#more-info}
@@ -104,7 +105,7 @@ Disclaimer {#disclaimer}
 
 Made w/ [**pagedown**](https://github.com/rstudio/pagedown). 
 
-Source code: [github.com/nstrayer/cv](https://github.com/nstrayer/cv).
+Source code: [github.com/kwickerh/paf-514-cv-example](https://github.com/kwickerh/paf-514-cv-example).
 
 Last updated on `r Sys.Date()`.
 
@@ -114,13 +115,12 @@ Last updated on `r Sys.Date()`.
 Main
 ================================================================================
 
-Nick Strayer {#title}
+Kelsey Wickerham {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
-intro_text <- "I have made [visualizations viewed by hundreds of thousands of people](https://www.nytimes.com/interactive/2016/08/26/us/college-student-migration.html), [sped up query times for 25 terabytes of data by an average of 4,800 times](https://livefreeordichotomize.com/2019/06/04/using_awk_and_r_to_parse_25tb/), and built [packages for R](https://github.com/nstrayer/shinysense) that let you [do magic](http://nickstrayer.me/dataDayTexas/).
-
-Currently searching for a data science position that allows me to build tools using visualization and machine learning to help people explore and understand their data. 
+intro_text <- "I am a graduate student pursuing a degree in Program Evaluation and Data Analytics.
+Currently searching for an entry level data analyst position that allows me to conduct analysis for public and non-profit sectors.
 "
 
 
